@@ -13,7 +13,7 @@ pipeline {
         stage('build backend') {
             agent {
                 dockerfile {
-                    filename 'Dockerfile'
+                    filename 'build/Dockerfile'
                     dir 'backend'
                 }
             }
