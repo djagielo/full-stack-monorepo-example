@@ -14,7 +14,7 @@ pipeline {
             agent {
                 dockerfile {
                     filename 'Dockerfile'
-                    dir 'backend/docker'
+                    dir 'backend'
                 }
             }
             when {
