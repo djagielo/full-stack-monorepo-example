@@ -1,5 +1,7 @@
 FROM maven:3-jdk-11 as build
 WORKDIR '/app'
+ADD pom.xml /app/
+RUN mvn verify clean --fail-never
 COPY . .
 RUN mvn clean package
 
