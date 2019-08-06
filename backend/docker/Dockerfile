@@ -1,7 +1,7 @@
 FROM maven:3-jdk-11 as build
 WORKDIR '/app'
 ADD pom.xml /app/
-RUN mvn verify clean --fail-never
+RUN mvn -B dependency:resolve-plugins dependency:resolve
 COPY . .
 RUN mvn clean package
 
