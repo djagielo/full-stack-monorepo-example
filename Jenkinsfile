@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('build frontend') {
             when {
@@ -11,6 +11,12 @@ pipeline {
         }
 
         stage('build backend') {
+            agent {
+                docker {
+                    filename 'Dockerfile.build'
+                    dir 'backend/docker'
+                }
+            }
             when {
                 changeset "backend/**"
             }
