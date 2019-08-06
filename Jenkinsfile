@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build frontend') {
             when {
-                changeset "**/frontend/*.*"
+                changeset "frontend/**"
             }
             steps {
                 echo 'building frontend app'
@@ -12,7 +12,7 @@ pipeline {
 
         stage('build backend') {
             when {
-                changeset "**/backend/*.*"
+                changeset "backend/**"
             }
             steps {
                 echo 'building backend app'
